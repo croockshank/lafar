@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="maxim_blue">#4DB0D1</color>
+    <color name="orange_red_crayols">#FE5F55</color>
+    <color name="gunmetal">#191E24</color>
+    <color name="battleship_grey">#858585</color>
+    <color name="cultured_grey">#F5F5F5</color>
+    <color name="ghost_white">#F7F7FF</color>
+    <color name="solid_white">#FFFFFF</color>
+    <color name="bittersweet_red">#FE6E64</color>
+    <color name="sandy_brown">#F49E52</color>
+    <color name="pistachio">#95D161</color>
+</resources>
