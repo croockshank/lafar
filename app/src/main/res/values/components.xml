@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Lafar.BottomAppBar.Colored" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="backgroundTint">?colorSurface</item>
+    </style>
+
+    <style name="Widget.Lafar.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?colorPrimary</item>
+    </style>
+</resources>

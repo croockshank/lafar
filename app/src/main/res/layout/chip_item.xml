@@ -28,11 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Caption"
         app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_icon"
         app:layout_constraintTop_toTopOf="@+id/iv_icon"
-        tools:text="Lokal"
-        android:textColor="@color/gunmetal"/>
+        tools:text="Lokal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

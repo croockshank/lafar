@@ -1,63 +1,57 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Lafar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/maxim_blue</item>
-        <item name="colorOnPrimary">@color/solid_white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/orange_red_crayols</item>
-        <item name="colorOnSecondary">@color/solid_white</item>
-        <!--Background color-->
-        <item name="backgroundColor">@color/ghost_white</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-    </style>
 
-    <style name="TextAppearance.MdcTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/montserrat_bold</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:textSize">32sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/montserrat_bold</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:textSize">24sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/montserrat</item>
-        <item name="android:fontFamily">@font/montserrat</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/raleway_medium</item>
-        <item name="android:fontFamily">@font/raleway_medium</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Caption" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/raleway_medium</item>
-        <item name="android:fontFamily">@font/raleway_medium</item>
-        <item name="android:textSize">12sp</item>
+    <style name="Theme.Lafar.Daynight" parent="Theme.Lafar" />
+
+    <!-- Base application theme. -->
+    <style name="Theme.Lafar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/lafar_blue_500</item>
+        <item name="colorPrimaryVariant">@color/lafar_blue_800</item>
+        <item name="colorSecondary">@color/lafar_red_400</item>
+        <item name="colorSecondaryVariant">@color/lafar_red_800</item>
+
+        <item name="android:colorBackground">@color/lafar_white_100</item>
+        <item name="colorSurface">@color/lafar_white_200</item>
+        <item name="colorError">@color/lafar_red_300</item>
+
+        <item name="colorOnPrimary">@color/lafar_white_50</item>
+        <item name="colorOnSecondary">@color/lafar_white_50</item>
+        <item name="colorOnBackground">@color/lafar_black_800</item>
+        <item name="colorOnSurface">@color/lafar_black_800</item>
+        <item name="colorOnError">@color/lafar_white_50</item>
+
+        <item name="scrimBackground">@color/lafar_black_800</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">@color/lafar_white_200</item>
+
+        <!--        Typography-->
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Lafar.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Lafar.Headline3</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Lafar.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Lafar.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Lafar.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Lafar.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Lafar.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Lafar.Caption</item>
+
+        <item name="emphasisHighAlpha">1</item>
+        <item name="emphasisMediumAlpha">0.60</item>
+        <item name="emphasisDisabledAlpha">0.38</item>
+
+        <!--        Styles-->
+        <item name="elevation">@dimen/plane_all</item>
+
+        <item name="bottomAppBarStyle">@style/Widget.Lafar.BottomAppBar.Colored</item>
+        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Lafar.FloatingActionButton</item>
+
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearence.Lafar.LargeComponent
+        </item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearence.Lafar.SmallComponent
+        </item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowBackground">?android:colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
 </resources>

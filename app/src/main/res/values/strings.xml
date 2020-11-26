@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lafar</string>
+    <string name="menu_fab_description">Search Nearby Restaurant</string>
+    <string name="action_profile">Profile</string>
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Apply to all components-->
+    <dimen name="lg_margin_padding">32dp</dimen>
+    <dimen name="md_margin_padding">16dp</dimen>
+    <dimen name="sm_margin_padding">8dp</dimen>
+    <dimen name="xs_margin_padding">4dp</dimen>
+
+    <!--    Search bar-->
+    <dimen name="search_bar_width">380dp</dimen>
+    <dimen name="search_bar_height">45dp</dimen>
+
+    <!--    Restaurant Card-->
+    <dimen name="card_restaurant_lg_width">250dp</dimen>
+    <dimen name="card_restaurant_lg_height">260dp</dimen>
+    <dimen name="card_restaurant_md_width">250dp</dimen>
+    <dimen name="card_restaurant_md_height">140dp</dimen>
+
+    <!--    Restaurant Detail Image-->
+    <dimen name="image_restaurant_detail_height">350dp</dimen>
+
+    <!--    Restaurant Menu Card-->
+    <dimen name="card_menu_height">130dp</dimen>
+    <dimen name="image_gallery_width">175dp</dimen>
+    <dimen name="image_gallery_height">105dp</dimen>
+    <dimen name="card_review_width">270dp</dimen>
+    <dimen name="card_review_height">190dp</dimen>
+
+    <dimen name="card_addon_height">45dp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShapeAppearence.Lafar.SmallComponent" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/lafar_sm_component_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearence.Lafar.LargeComponent" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/lafar_lg_component_corner_radius</item>
+    </style>
+
+    <dimen name="lafar_sm_component_corner_radius">8dp</dimen>
+    <dimen name="lafar_lg_component_corner_radius">20dp</dimen>
+</resources>
