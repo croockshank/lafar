@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Lafar.Daynight" parent="Theme.Lafar" />
+    <style name="Theme.Lafar.Light" parent="Theme.Lafar" />
 
     <!-- Base application theme. -->
-    <style name="Theme.Lafar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Lafar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/lafar_blue_500</item>
         <item name="colorPrimaryVariant">@color/lafar_blue_800</item>
         <item name="colorSecondary">@color/lafar_red_400</item>
@@ -20,7 +20,7 @@
         <item name="colorOnError">@color/lafar_white_50</item>
 
         <item name="scrimBackground">@color/lafar_black_800</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/lafar_white_200</item>
 
         <!--        Typography-->
@@ -37,10 +37,14 @@
         <item name="emphasisMediumAlpha">0.60</item>
         <item name="emphasisDisabledAlpha">0.38</item>
 
+        <item name="motionInterpolatorPersistent">@android:interpolator/fast_out_slow_in</item>
+        <item name="motionInterpolatorIncoming">@android:interpolator/decelerate_cubic</item>
+        <item name="motionInterpolatorOutgoing">@android:interpolator/accelerate_cubic</item>
+
         <!--        Styles-->
         <item name="elevation">@dimen/plane_all</item>
 
-        <item name="bottomAppBarStyle">@style/Widget.Lafar.BottomAppBar.Colored</item>
+        <item name="bottomAppBarStyle">@style/Widget.Lafar.BottomAppBar.PrimarySurface</item>
         <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
         <item name="floatingActionButtonStyle">@style/Widget.Lafar.FloatingActionButton</item>
 
@@ -51,7 +55,7 @@
 
         <!--System/Platform attributes-->
         <item name="android:windowBackground">?android:colorBackground</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
 </resources>

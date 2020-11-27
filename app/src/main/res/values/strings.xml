@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Lafar</string>
-    <string name="menu_fab_description">Search Nearby Restaurant</string>
+    <string name="discover_fab_description">Search Nearby Restaurant</string>
     <string name="action_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_discover">Discover</string>
+    <string name="bottom_navigation_drawer_chevron_description">Open or Close Navigation Drawer</string>
+    <string name="bottom_navigation_drawer_discover_icon">Discover Icon</string>
+    <string name="bottom_navigation_drawer_home">Home</string>
 </resources>

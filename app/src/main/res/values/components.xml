@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Widget.Lafar.BottomAppBar.Colored" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+    <style name="Widget.Lafar.BottomAppBar.PrimarySurface" parent="Widget.MaterialComponents.BottomAppBar.PrimarySurface">
         <item name="backgroundTint">?colorSurface</item>
     </style>
 
