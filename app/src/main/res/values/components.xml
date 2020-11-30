@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Lafar.Reply.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <!--Remove any scrim insets applied by NavigationView for system bars-->
+        <item name="insetForeground">@android:color/transparent</item>
+        <!--Set the background color of NavigationView-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
+        <item name="itemTextColor">@color/color_on_surface_emphasis_medium</item>
+        <item name="itemIconTint">@color/color_on_surface_emphasis_medium</item>
+    </style>
+
     <style name="Widget.Lafar.BottomAppBar.PrimarySurface" parent="Widget.MaterialComponents.BottomAppBar.PrimarySurface">
         <item name="backgroundTint">?colorSurface</item>
     </style>
 
     <style name="Widget.Lafar.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="backgroundTint">?colorPrimary</item>
+    </style>
+
+    <style name="Widget.Lafar.Chip.Action" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:checkable">false</item>
+
+        <item name="closeIconVisible">false</item>
+
+        <item name="elevation">0dp</item>
+
+        <item name="chipMinTouchTargetSize">0dp</item>
+    </style>
+
+    <style name="Widget.Lafar.Chip.Action.Light" parent="Widget.Lafar.Chip.Action">
+        <item name="chipMinHeight">@dimen/lafar_lg_component_corner_radius</item>
+        <item name="chipBackgroundColor">?colorSurface</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="Widget.Lafar.Chip.Action.Dark" parent="Widget.Lafar.Chip.Action">
+        <item name="chipMinHeight">@dimen/lafar_lg_component_corner_radius</item>
+        <item name="chipBackgroundColor">?colorOnSurface</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.Lafar.Chip.Action.Light.Iconified" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipIconVisible">true</item>
+
+        <item name="chipStartPadding">@dimen/xs_margin_padding</item>
+    </style>
+
+    <style name="Widget.Lafar.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:checkable">true</item>
+
+        <item name="chipIconVisible">true</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+
+        <item name="chipBackgroundColor">@color/color_chip_item</item>
+        <item name="android:textColor">@color/color_chip_text_item</item>
+
+        <item name="elevation">@dimen/plane_all</item>
+
+        <item name="chipStartPadding">@dimen/xs_margin_padding</item>
     </style>
 </resources>

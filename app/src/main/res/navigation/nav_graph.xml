@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.genadidharma.lafar.HomeFragment"
+        android:name="com.genadidharma.lafar.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/discoverFragment"
-        android:name="com.genadidharma.lafar.DiscoverFragment"
+        android:name="com.genadidharma.lafar.ui.discover.DiscoverFragment"
         android:label="fragment_discover"
         tools:layout="@layout/fragment_discover" >
         <action
@@ -24,19 +24,19 @@
     </fragment>
     <fragment
         android:id="@+id/restaurantFragment"
-        android:name="com.genadidharma.lafar.RestaurantFragment"
+        android:name="com.genadidharma.lafar.ui.restaurant.RestaurantFragment"
         android:label="fragment_restaurant"
         tools:layout="@layout/fragment_restaurant" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.genadidharma.lafar.ProfileFragment"
+        android:name="com.genadidharma.lafar.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <action
         android:id="@+id/action_global_homeFragment"
         app:destination="@id/homeFragment"
-        app:popUpToInclusive="true"
         app:launchSingleTop="true"
+        app:popUpToInclusive="true"
         app:popUpTo="@id/nav_graph" />
     <action
         android:id="@+id/action_global_discoverFragment"

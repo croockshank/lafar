@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="restaurant"
+            type="com.genadidharma.lafar.data.Restaurant" />
+
+        <variable
+            name="listener"
+            type="com.genadidharma.lafar.ui.home.RestaurantAdapter.RestaurantAdapterListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/card_restaurant_md_width"
+        android:layout_height="@dimen/card_restaurant_md_height"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:elevation="@dimen/cardview_default_elevation">
+
+            <ImageView
+                android:id="@+id/iv_gradient_overlay"
+                glideSrc="@{restaurant.image}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_restaurant_1" />
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_gradient_overlay"
+                app:layout_constraintTop_toTopOf="@+id/iv_gradient_overlay"
+                app:srcCompat="@drawable/bg_restaurant_item" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_rating"
+                style="@style/Widget.Lafar.Chip.Action.Light.Iconified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text='@{String.format("%.1f", restaurant.rating)}'
+                android:textAppearance="@style/TextAppearance.Lafar.Headline4"
+                app:chipBackgroundColor="?colorSurface"
+                app:chipIcon="@drawable/ic_baseline_star_24"
+                app:chipMinTouchTargetSize="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5.0" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{restaurant.title}"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline3"
+                android:textColor="@color/color_on_primary_surface_emphasis_high"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_gradient_overlay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Bebek Bengil, Dirty Duck Diner" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_distance"
+                style="@style/Widget.Lafar.Chip.Action.Light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='@{String.format("%.1f", restaurant.distance) + " km"}'
+                android:textAppearance="@style/TextAppearance.Lafar.Headline5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                tools:text="5km" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle"
+                android:padding="@dimen/sm_margin_padding"
+                app:layout_constraintBottom_toBottomOf="@+id/chip_rating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/chip_rating"
+                app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

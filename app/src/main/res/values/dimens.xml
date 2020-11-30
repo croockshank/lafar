@@ -6,9 +6,22 @@
     <dimen name="sm_margin_padding">8dp</dimen>
     <dimen name="xs_margin_padding">4dp</dimen>
 
+    <!--BottomAppBar-->
+    <dimen name="bottom_app_bar_height">56dp</dimen>
+
+<!--    For Text-->
+    <dimen name="text_lg_max_width">265dp</dimen>
+    <dimen name="text_sm_max_width">150dp</dimen>
+
 <!--    Profile Icon-->
     <dimen name="profile_icon_size">24dp</dimen>
     <dimen name="profile_icon_stroke_size">1dp</dimen>
+
+<!--    Banner-->
+    <dimen name="banner_height">330dp</dimen>
+    <dimen name="carousel_height">175dp</dimen>
+
+    <dimen name="chip_icon_diameter">24dp</dimen>
 
     <!--    Search bar-->
     <dimen name="search_bar_width">380dp</dimen>

@@ -6,6 +6,12 @@
         android:id="@+id/profileFragment"
         android:icon="@drawable/avatar_1"
         android:title="@string/action_profile"
-
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/searchItem"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/action_profile"
+        app:showAsAction="ifRoom" />
+
 </menu>

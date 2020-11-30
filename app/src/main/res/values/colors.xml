@@ -17,4 +17,9 @@
     <color name="orange_400">#F49E52</color>
 
     <color name="green_300">#95D161</color>
+
+    <color name="lafar_blue_500_alpha_060">#99eef0f2</color>
+    <color name="lafar_black_900_alpha_020">#33000000</color>
+
+    <color name="nav_bar">@color/lafar_black_900_alpha_020</color>
 </resources>

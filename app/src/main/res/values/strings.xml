@@ -8,4 +8,16 @@
     <string name="bottom_navigation_drawer_chevron_description">Open or Close Navigation Drawer</string>
     <string name="bottom_navigation_drawer_discover_icon">Discover Icon</string>
     <string name="bottom_navigation_drawer_home">Home</string>
+    <string name="logo_description">Lafar Logo</string>
+    <string name="greeting_placeholder">Siang Rena, dari</string>
+    <string name="current_place_placeholder">Ubud, Gianyar</string>
+    <string name="section_ragam_kuliner_title">Ragam Kuliner</string>
+    <string name="expand_placeholder">Lihat Semua</string>
+    <string name="section_lagi_ngetrend_banget_title">Lagi Ngetrend Banget</string>
+    <string name="section_tempatnya_instagrammable_title">Tempatnya Instagrammable</string>
+    <string name="chevron_lagi_ngetrend_banget_description">Lihat semua hidangan yang sedang ngetrend</string>
+    <string name="chevron_ragam_kuliner_description">Lihat semua ragam kuliner yang ada</string>
+    <string name="notification_description">Lihat notifikasi untuk anda</string>
+    <string name="chevron_tempatnya_instagrammable_description">Lihat tempat paling instagrammable dan populer</string>
+    <string name="item_restaurant_friends_placeholder">Teman yang pernah kesini</string>
 </resources>

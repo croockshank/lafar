@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="promotion"
+            type="com.genadidharma.lafar.data.Promotion" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/lg_margin_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:text="@{promotion.label}"
+                android:textAppearance="@style/TextAppearance.Lafar.Subtitle2"
+                android:textColor="@color/color_on_primary_surface_emphasis_high" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:text="@{promotion.title}"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline1"
+                android:textColor="@color/color_on_primary_surface_emphasis_high" />
+
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:layout_marginTop="@dimen/grid_1"
+                android:singleLine="false"
+                android:text="@{promotion.subtitle}"
+                android:textAppearance="@style/TextAppearance.Lafar.Subtitle2"
+                android:textColor="@color/color_on_primary_surface_emphasis_high" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_promo_image"
+            glideSrc="@{promotion.image}"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/carousel_height"
+            android:layout_marginEnd="@dimen/grid_2"
+            android:layout_weight="1"
+            android:contentDescription="@{promotion.subtitle}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+</layout>

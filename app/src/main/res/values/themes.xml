@@ -20,18 +20,22 @@
         <item name="colorOnError">@color/lafar_white_50</item>
 
         <item name="scrimBackground">@color/lafar_black_800</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/lafar_white_200</item>
+        <item name="android:statusBarColor">@color/lafar_blue_500_alpha_060</item>
+        <item name="android:navigationBarColor">@color/nav_bar</item>
 
         <!--        Typography-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Lafar.Headline1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.Lafar.Headline2</item>
         <item name="textAppearanceHeadline3">@style/TextAppearance.Lafar.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Lafar.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Lafar.Headline4</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.Lafar.Subtitle1</item>
         <item name="textAppearanceSubtitle2">@style/TextAppearance.Lafar.Subtitle2</item>
         <item name="textAppearanceBody1">@style/TextAppearance.Lafar.Body1</item>
         <item name="textAppearanceBody2">@style/TextAppearance.Lafar.Body2</item>
         <item name="textAppearanceButton">@style/TextAppearance.Lafar.Button</item>
         <item name="textAppearanceCaption">@style/TextAppearance.Lafar.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Lafar.Overline</item>
 
         <item name="emphasisHighAlpha">1</item>
         <item name="emphasisMediumAlpha">0.60</item>
@@ -47,6 +51,7 @@
         <item name="bottomAppBarStyle">@style/Widget.Lafar.BottomAppBar.PrimarySurface</item>
         <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
         <item name="floatingActionButtonStyle">@style/Widget.Lafar.FloatingActionButton</item>
+        <item name="navigationViewStyle">@style/Lafar.Reply.NavigationView</item>
 
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearence.Lafar.LargeComponent
         </item>

@@ -1,4 +1,4 @@
-package com.genadidharma.lafar
+package com.genadidharma.lafar.ui
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -12,10 +12,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import com.genadidharma.lafar.R
 import com.genadidharma.lafar.databinding.ActivityMainBinding
+import com.genadidharma.lafar.ui.discover.DiscoverFragmentDirections
+import com.genadidharma.lafar.ui.profile.ProfileFragmentDirections
 import com.genadidharma.lafar.util.contentView
 import com.google.android.material.transition.MaterialElevationScale
-import com.google.android.material.transition.MaterialSharedAxis
 
 class MainActivity : AppCompatActivity(),
         Toolbar.OnMenuItemClickListener,
@@ -93,7 +95,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun setBottomAppBarForDiscover(){
-        hideBottomAppBar();
+        hideBottomAppBar()
     }
 
     private fun hideBottomAppBar() {
