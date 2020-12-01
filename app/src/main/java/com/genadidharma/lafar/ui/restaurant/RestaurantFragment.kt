@@ -1,58 +1,80 @@
 package com.genadidharma.lafar.ui.restaurant
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.genadidharma.lafar.R
+import com.genadidharma.lafar.data.Restaurant
+import com.genadidharma.lafar.databinding.*
+import com.genadidharma.lafar.ui.home.FriendsAttachmentAdapter
+import com.genadidharma.lafar.util.MarginItemDecorationHorizontal
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RestaurantFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RestaurantFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val args: RestaurantFragmentArgs by navArgs()
+    private val restaurant: Restaurant by lazy(LazyThreadSafetyMode.NONE) { args.restaurant }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private lateinit var binding: FragmentRestaurantBinding
+    private lateinit var sectionPagerAdapter: RestaurantSectionPagerAdapter
+    private val restaurantCarouselAdapter = ImageCarouselAdapter()
+    private val friendsAttachmentAdapter = FriendsAttachmentAdapter()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentRestaurantBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.restaurant = restaurant
+
+        initCarouselImages()
+        initFeatureChips()
+        initSectionTabLayout(view)
+    }
+
+    private fun initFeatureChips() {
+        binding.cgFeatures.run {
+            restaurant.features.forEach {
+                val chipBinding = ItemRestaurantFeatureChipBinding.inflate(
+                        LayoutInflater.from(context),
+                        this,
+                        false
+                ).apply {
+                    features = it
+                }
+                addView(chipBinding.root)
+            }
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restaurant, container, false)
+    private fun initSectionTabLayout(view: View) {
+        binding.tlSection.setupWithViewPager(binding.vpSection)
+        sectionPagerAdapter = RestaurantSectionPagerAdapter(view.context, childFragmentManager, restaurant)
+        binding.vpSection.adapter = sectionPagerAdapter
+
+        binding.tlSection.getTabAt(0)?.setIcon(RestaurantSectionPagerAdapter.SectionFragments.MENU.image)
+        binding.tlSection.getTabAt(1)?.setIcon(RestaurantSectionPagerAdapter.SectionFragments.GALLERY.image)
+        binding.tlSection.getTabAt(2)?.setIcon(RestaurantSectionPagerAdapter.SectionFragments.REVIEW.image)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RestaurantFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                RestaurantFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    private fun initCarouselImages() {
+        binding.svImages.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        binding.svImages.setSliderAdapter(restaurantCarouselAdapter)
+        restaurantCarouselAdapter.addItems(restaurant.images)
+        initFriendsAttachmentAdapter()
+    }
+
+    private fun initFriendsAttachmentAdapter() {
+        binding.rvRelatedFriends.addItemDecoration(MarginItemDecorationHorizontal(
+                0,
+                0,
+                resources.getDimensionPixelSize(R.dimen.sm_margin_padding)
+        ))
+        binding.rvRelatedFriends.adapter = friendsAttachmentAdapter
+        friendsAttachmentAdapter.submitList(restaurant.friends)
     }
 }

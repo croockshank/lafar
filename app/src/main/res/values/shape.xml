@@ -11,7 +11,9 @@
         <item name="cornerSize">@dimen/lafar_lg_component_corner_radius</item>
     </style>
 
-    <dimen name="lafar_sm_component_corner_radius">8dp</dimen>
+    <dimen name="lafar_sm_component_corner_radius">10dp</dimen>
     <dimen name="lafar_lg_component_corner_radius">20dp</dimen>
+    <dimen name="lafar_xl_component_corner_radius">30dp</dimen>
+
     <dimen name="lafar_sm_component_min_height">20dp</dimen>
 </resources>

@@ -11,13 +11,16 @@ object RestaurantItem {
                     RestaurantSection.LAGI_NGETREND_BANGET,
                     1,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     5.0,
                     listOf(
                             TypeItem.getType(TypeEnum.BEBEK),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Bebek Betutu Pak Sanur",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -25,19 +28,26 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    5.0
+                    5.0,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             ),
             Restaurant(
                     RestaurantSection.LAGI_NGETREND_BANGET,
                     2,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     4.3,
                     listOf(
                             TypeItem.getType(TypeEnum.BEBEK),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Bebek Bengil, Dirty Duck Diner",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -45,19 +55,26 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    4.3
+                    4.3,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             ),
             Restaurant(
                     RestaurantSection.LAGI_NGETREND_BANGET,
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     4.3,
                     listOf(
                             TypeItem.getType(TypeEnum.NASIAYAM),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Nasi Ayam Kedewatan Bu Mangku",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -65,19 +82,26 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    4.3
+                    4.3,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             ),
             Restaurant(
                     RestaurantSection.TEMPATNYA_INSTAGRAMMABLE,
                     3,
                     CuisineItem.getCuisine(CuisineType.FASTFOOD),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     4.3,
                     listOf(
                             TypeItem.getType(TypeEnum.NASIAYAM),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Milk and Madu Cafe",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -85,19 +109,26 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    4.3
+                    4.3,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             ),
             Restaurant(
                     RestaurantSection.TEMPATNYA_INSTAGRAMMABLE,
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     4.3,
                     listOf(
                             TypeItem.getType(TypeEnum.NASIAYAM),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Starbucks Coffee",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -105,19 +136,26 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    4.3
+                    4.3,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             ),
             Restaurant(
                     RestaurantSection.TEMPATNYA_INSTAGRAMMABLE,
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
-                    R.drawable.img_restaurant_1,
+                    listOf(
+                            R.drawable.img_restaurant_1
+                    ),
                     4.3,
                     listOf(
                             TypeItem.getType(TypeEnum.NASIAYAM),
                             TypeItem.getType(TypeEnum.LOKAL)
                     ),
                     "Folk Pool & Gardens",
+                    "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
@@ -125,7 +163,11 @@ object RestaurantItem {
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
-                    4.3
+                    4.3,
+                    listOf(
+                            RestaurantFeature(RestaurantFeatureType.MAKAN_DI_TEMPAT, true),
+                            RestaurantFeature(RestaurantFeatureType.BUNGKUS, true)
+                    )
             )
     )
 
@@ -135,7 +177,7 @@ object RestaurantItem {
         return when (key?.key) {
             CuisineType.SEMUA -> {
                 Transformations.map(_restaurants) { restaurant ->
-                    restaurant.filter { it.section == section}.toList()
+                    restaurant.filter { it.section == section }.toList()
                 }
             }
             else -> {
@@ -144,6 +186,12 @@ object RestaurantItem {
                 }
             }
         }
+    }
+
+    fun getRestaurant(id: Int): Restaurant? {
+        return Transformations.map(_restaurants) { restaurant ->
+            restaurant.find { it.id == id }
+        }.value
     }
 
     init {

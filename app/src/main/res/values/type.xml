@@ -5,12 +5,16 @@
         <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.025</item>
+        <item name="lineHeight">31.2sp</item>
     </style>
 
     <style name="TextAppearance.Lafar.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
         <item name="fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="lineHeight">31.2sp</item>
     </style>
 
     <style name="TextAppearance.Lafar.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
@@ -31,28 +35,41 @@
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
     </style>
 
+    <style name="TextAppearance.Lafar.Subtitle1.Bold" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/raleway_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
     <style name="TextAppearance.Lafar.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.15</item>
     </style>
 
     <style name="TextAppearance.Lafar.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="fontFamily">@font/raleway_medium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.1</item>
     </style>
 
     <style name="TextAppearance.Lafar.Body1" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.5</item>
+        <item name="lineHeight">24sp</item>
     </style>
 
     <style name="TextAppearance.Lafar.Body2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.25</item>
+        <item name="lineHeight">21sp</item>
     </style>
 
     <style name="TextAppearance.Lafar.Button" parent="TextAppearance.MaterialComponents.Button">
@@ -60,18 +77,28 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="TextAppearance.Lafar.Caption.Light" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.04</item>
     </style>
 
     <style name="TextAppearance.Lafar.Caption" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/raleway_medium</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.04</item>
     </style>
 
     <style name="TextAppearance.Lafar.Caption.Bold" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/raleway_semibold</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/color_on_surface_emphasis_high</item>
+        <item name="android:letterSpacing">0.04</item>
     </style>
 
     <style name="TextAppearance.Lafar.Overline" parent="TextAppearance.MaterialComponents.Overline">

@@ -19,5 +19,19 @@
     <string name="chevron_ragam_kuliner_description">Lihat semua ragam kuliner yang ada</string>
     <string name="notification_description">Lihat notifikasi untuk anda</string>
     <string name="chevron_tempatnya_instagrammable_description">Lihat tempat paling instagrammable dan populer</string>
-    <string name="item_restaurant_friends_placeholder">Teman yang pernah kesini</string>
+    <string name="item_restaurant_friends_placeholder">Teman yang pernah kesini:</string>
+    <string name="home_to_restaurant_transition_name">restaurant_card_%1$s</string>
+    <string name="home_to_restaurant_detail_transition">Home to Restaurant Detail Transition</string>
+    <string name="tab_title_menu">Menu</string>
+    <string name="tab_title_gallery">Galeri</string>
+    <string name="tab_title_review">Ulasan</string>
+    <string name="best_seller_menu">Best Seller</string>
+    <string name="promo_weekend_menu">Promo Weekend</string>
+    <string name="makanan_menu">Makanan</string>
+    <string name="minuman_menu">Minuman</string>
+    <string name="restaurant_to_menu_transition_name">menu_card_%1$s</string>
+    <string name="restaurant_to_menu__transition">Restaurant Detail to Menu Transition</string>
+    <string name="menu_to_detail_transition_name">menu_detail_card_%1$s</string>
+    <string name="menu_to_detial_transition">Menu to Menu Detail Transition</string>
+    <string name="menu_addon_title">Tambahan</string>
 </resources>

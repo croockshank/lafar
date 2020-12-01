@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="features"
+            type="com.genadidharma.lafar.data.RestaurantFeature" />
+    </data>
+
+    <com.google.android.material.chip.Chip
+        style="@style/Widget.Lafar.Chip.Choice"
+        glideChipIcon='@{features.available ? context.resources.getIdentifier("ic_check_24", "drawable", context.getPackageName()) : context.resources.getIdentifier("ic_close_24", "drawable", context.getPackageName())}'
+        glideChipIconCircularCrop="@{true}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{features.name.type}"
+        android:textAppearance="@style/TextAppearance.Lafar.Caption"
+        app:chipMinTouchTargetSize="0dp" />
+
+</layout>

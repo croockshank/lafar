@@ -1,21 +1,27 @@
 package com.genadidharma.lafar.data
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.DiffUtil
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class Restaurant(
-        val section: RestaurantSection,
-        val id: Int,
-        val cuisine: Cuisine?,
-        @DrawableRes val image: Int,
-        val rating: Double,
-        val types: List<Type?>,
-        val title: String,
-        val friends: List<Person?>,
-        val distance: Double
-)
+        val section: @RawValue RestaurantSection,
+        val id: @RawValue Int,
+        val cuisine: @RawValue Cuisine?,
+        @DrawableRes val images: List<Int>,
+        val rating: @RawValue Double,
+        val types: @RawValue List<Type?>,
+        val title: @RawValue String,
+        val address: @RawValue String,
+        val friends: @RawValue List<Person?>,
+        val distance: @RawValue Double,
+        val features: @RawValue List<RestaurantFeature>
+) : Parcelable
 
-enum class RestaurantSection{
+enum class RestaurantSection {
     LAGI_NGETREND_BANGET,
     TEMPATNYA_INSTAGRAMMABLE
 }

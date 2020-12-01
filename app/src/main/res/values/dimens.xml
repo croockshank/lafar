@@ -33,6 +33,8 @@
     <dimen name="card_restaurant_md_width">250dp</dimen>
     <dimen name="card_restaurant_md_height">140dp</dimen>
 
+    <dimen name="image_card_restaurant_size">75dp</dimen>
+
     <!--    Restaurant Detail Image-->
     <dimen name="image_restaurant_detail_height">350dp</dimen>
 

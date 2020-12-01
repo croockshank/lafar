@@ -62,4 +62,12 @@
 
         <item name="chipStartPadding">@dimen/xs_margin_padding</item>
     </style>
+
+    <style name="ShapeAppearance.Lafar.Image.Detail" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/lafar_xl_component_corner_radius</item>
+        <item name="cornerSizeBottomLeft">@dimen/lafar_xl_component_corner_radius</item>
+    </style>
 </resources>

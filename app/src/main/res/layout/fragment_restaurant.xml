@@ -1,15 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RestaurantFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="restaurant"
+            type="com.genadidharma.lafar.data.Restaurant" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Restaurant Fragment"
-        android:gravity="center"/>
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/bottom_app_bar_height"
+        android:transitionName="@string/home_to_restaurant_detail_transition">
 
-</FrameLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/sv_images"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_restaurant_detail_height"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sliderIndicatorEnabled="true"
+                        app:sliderIndicatorGravity="right|bottom"
+                        app:sliderIndicatorMarginBottom="16dp"
+                        app:sliderIndicatorMarginRight="@dimen/md_margin_padding"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorSelectedColor="?colorOnPrimary" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="?attr/actionBarSize"
+                        app:contentInsetStartWithNavigation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:marginTopSystemWindowInsets="@{true}"
+                        app:menu="@menu/toolbar_restaurant_detail_menu"
+                        app:navigationIcon="@drawable/ic_back_backgrounded" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/item_restaurant_friends_placeholder"
+                        android:textAlignment="textEnd"
+                        android:textAppearance="@style/TextAppearance.Lafar.Overline"
+                        android:textColor="@color/color_on_primary_surface_emphasis_high"
+                        app:layout_constraintBottom_toTopOf="@+id/rv_related_friends"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_related_friends"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="@+id/sv_images"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_description"
+                        app:layout_constraintStart_toStartOf="@+id/tv_description">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <HorizontalScrollView
+                        android:id="@+id/hv_chip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sv_images">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cg_features"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:paddingStart="@dimen/md_margin_padding"
+                            android:paddingEnd="@dimen/md_margin_padding"
+                            app:singleLine="true"
+                            app:singleSelection="true" />
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{restaurant.title}"
+                        android:textAppearance="@style/TextAppearance.Lafar.Headline2"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hv_chip" />
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_baseline_star_32"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_rating"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text='@{String.format("%.1f", restaurant.rating)}'
+                        android:textAppearance="@style/TextAppearance.Lafar.Headline1"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='@{String.format("%.1fkm", restaurant.distance)}'
+                        android:textAppearance="@style/TextAppearance.Lafar.Subtitle2"
+                        android:textColor="@color/color_on_surface_emphasis_disabled"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                        app:layout_constraintStart_toStartOf="@+id/tv_title"
+                        app:layout_constraintTop_toTopOf="@+id/tv_address" />
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="@dimen/grid_0_5"
+                        android:layout_height="@dimen/grid_0_5"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/circle_grey"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                        app:layout_constraintStart_toEndOf="@+id/tv_distance"
+                        app:layout_constraintTop_toTopOf="@+id/tv_address" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{restaurant.address}"
+                        android:textAppearance="@style/TextAppearance.Lafar.Button"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_rating"
+                        app:layout_constraintStart_toEndOf="@+id/imageView14"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_rating" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tl_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="32dp"
+                        android:background="@drawable/chip_tab_background"
+                        app:layout_constraintStart_toStartOf="@+id/tv_distance"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address"
+                        app:tabBackground="@drawable/chip_tab_selector"
+                        app:tabIconTint="@null"
+                        app:tabIndicatorColor="@android:color/transparent"
+                        app:tabInlineLabel="true"
+                        app:tabMode="auto"
+                        app:tabPadding="@dimen/xs_margin_padding"
+                        app:tabSelectedTextColor="?colorOnSurface"
+                        app:tabTextAppearance="@style/TextAppearance.Lafar.Button"
+                        app:tabUnboundedRipple="false" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

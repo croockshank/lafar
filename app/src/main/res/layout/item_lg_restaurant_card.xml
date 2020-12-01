@@ -19,6 +19,8 @@
         android:layout_height="@dimen/card_restaurant_lg_height"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="@{(view) -> listener.onRestaurantClicked(view, restaurant)}"
+        android:transitionName="@{@string/home_to_restaurant_transition_name(restaurant.id)}"
         app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +31,7 @@
 
             <ImageView
                 android:id="@+id/iv_gradient_overlay"
-                glideSrc="@{restaurant.image}"
+                glideSrc="@{restaurant.images.get(0)}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"

@@ -26,7 +26,12 @@
         android:id="@+id/restaurantFragment"
         android:name="com.genadidharma.lafar.ui.restaurant.RestaurantFragment"
         android:label="fragment_restaurant"
-        tools:layout="@layout/fragment_restaurant" />
+        tools:layout="@layout/fragment_restaurant" >
+
+        <argument
+            android:name="restaurant"
+            app:argType="com.genadidharma.lafar.data.Restaurant" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.genadidharma.lafar.ui.profile.ProfileFragment"
@@ -44,4 +49,24 @@
     <action
         android:id="@+id/action_global_profileFragment"
         app:destination="@id/profileFragment" />
+    <fragment
+        android:id="@+id/menuDetailFragment"
+        android:name="com.genadidharma.lafar.ui.restaurant.sections.menu.MenuDetailFragment"
+        android:label="fragment_menu_detail"
+        tools:layout="@layout/fragment_menu_detail" >
+        <argument
+            android:name="menu"
+            app:argType="com.genadidharma.lafar.data.Menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.genadidharma.lafar.ui.restaurant.sections.menu.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_menuFragment"
+        app:destination="@id/menuFragment" />
 </navigation>
