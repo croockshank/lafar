@@ -15,7 +15,7 @@ object RestaurantMenuItem {
                                     MenuType.BEST_SELLER,
                                     "Nasi Kotak Biasa",
                                     listOf(
-                                            R.drawable.img_restaurant_1
+                                            R.drawable.img_menu_1
                                     ),
                                     30000,
                                     "Nasi, ayam betutu, sate, urap, telor, kacang saur, sambel",
@@ -39,9 +39,9 @@ object RestaurantMenuItem {
                                     MenuType.BEST_SELLER,
                                     "Betutu Upih",
                                     listOf(
-                                            R.drawable.img_restaurant_1
+                                            R.drawable.img_menu_2
                                     ),
-                                    30000,
+                                    22000,
                                     "1 ekor ayam betutu yang sudah dimasak dan dibumbui",
                                     listOf(
                                             AddOn(
@@ -61,12 +61,12 @@ object RestaurantMenuItem {
                             Menu(
                                     5,
                                     MenuType.PROMO_WEEKEND,
-                                    "Ayam Betutu Takilan",
+                                    "Capcay Ala Mina",
                                     listOf(
-                                            R.drawable.img_restaurant_1
+                                            R.drawable.img_menu_3
                                     ),
-                                    30000,
-                                    "Ayam betutu yang kaya rasa dengan kuah yang gurih, ditemani dengan sate, urap, dan telur asin serta dipadukan dengan nasi dan sambal ",
+                                    15000,
+                                    "Sayuran pilihan yang dimasak dengan daging ayam ",
                                     listOf(
                                             AddOn(
                                                     1,

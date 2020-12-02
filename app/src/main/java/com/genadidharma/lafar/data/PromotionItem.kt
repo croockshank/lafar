@@ -18,14 +18,14 @@ object PromotionItem {
                     "Makan sampai",
                     "Puas",
                     "Ada promo nunggu nih buat kamu",
-                    R.drawable.carousel_image_1
+                    R.drawable.carousel_image_4
             ),
             Promotion(
                     3,
                     "Selalu pakai",
                     "Masker",
                     "Supaya jalan-jalannya tetep happy",
-                    R.drawable.carousel_image_1
+                    R.drawable.carousel_image_3
             )
     )
 

@@ -12,7 +12,8 @@ object RestaurantItem {
                     1,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_1,
+                            R.drawable.img_restaurant_6
                     ),
                     5.0,
                     listOf(
@@ -22,8 +23,6 @@ object RestaurantItem {
                     "Bebek Betutu Pak Sanur",
                     "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
-                            PersonItem.getPerson(1),
-                            PersonItem.getPerson(2),
                             PersonItem.getPerson(3),
                             PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
@@ -39,7 +38,7 @@ object RestaurantItem {
                     2,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1,
+                            R.drawable.img_restaurant_3,
                             R.drawable.img_restaurant_2
                     ),
                     4.3,
@@ -51,10 +50,8 @@ object RestaurantItem {
                     "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
-                            PersonItem.getPerson(2),
                             PersonItem.getPerson(3),
-                            PersonItem.getPerson(4),
-                            PersonItem.getPerson(5)
+                            PersonItem.getPerson(4)
                     ),
                     4.3,
                     listOf(
@@ -67,7 +64,8 @@ object RestaurantItem {
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_4,
+                            R.drawable.img_restaurant_5
                     ),
                     4.3,
                     listOf(
@@ -79,8 +77,6 @@ object RestaurantItem {
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
-                            PersonItem.getPerson(3),
-                            PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
                     4.3,
@@ -106,9 +102,7 @@ object RestaurantItem {
                     listOf(
                             PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
-                            PersonItem.getPerson(3),
-                            PersonItem.getPerson(4),
-                            PersonItem.getPerson(5)
+                            PersonItem.getPerson(3)
                     ),
                     4.3,
                     listOf(
@@ -132,10 +126,8 @@ object RestaurantItem {
                     "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
                             PersonItem.getPerson(1),
-                            PersonItem.getPerson(2),
                             PersonItem.getPerson(3),
-                            PersonItem.getPerson(4),
-                            PersonItem.getPerson(5)
+                            PersonItem.getPerson(4)
                     ),
                     4.3,
                     listOf(
@@ -158,10 +150,8 @@ object RestaurantItem {
                     "Folk Pool & Gardens",
                     "Jl. Raya Kedewatan No. 18, Ubud",
                     listOf(
-                            PersonItem.getPerson(1),
                             PersonItem.getPerson(2),
                             PersonItem.getPerson(3),
-                            PersonItem.getPerson(4),
                             PersonItem.getPerson(5)
                     ),
                     4.3,

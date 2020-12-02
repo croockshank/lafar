@@ -9,7 +9,7 @@ object ReviewItem {
             Review(
                     RestaurantItem.getRestaurant(1),
                     ReviewType.ULASAN_TEMAN,
-                    PersonItem.getPerson(1),
+                    PersonItem.getPerson(3),
                     4.5,
                     "December 2, 2020",
                     true,
@@ -22,7 +22,7 @@ object ReviewItem {
             Review(
                     RestaurantItem.getRestaurant(1),
                     ReviewType.ULASAN_TERAKHIR,
-                    PersonItem.getPerson(1),
+                    PersonItem.getPerson(4),
                     4.5,
                     "December 2, 2020",
                     true,
