@@ -58,15 +58,7 @@
             android:name="menu"
             app:argType="com.genadidharma.lafar.data.Menu" />
     </fragment>
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.genadidharma.lafar.ui.restaurant.sections.menu.MenuFragment"
-        android:label="MenuFragment" >
-        <action
-            android:id="@+id/action_menuFragment_to_menuDetailFragment"
-            app:destination="@id/menuDetailFragment" />
-    </fragment>
     <action
-        android:id="@+id/action_global_menuFragment"
-        app:destination="@id/menuFragment" />
+        android:id="@+id/action_global_menuDetailFragment"
+        app:destination="@id/menuDetailFragment" />
 </navigation>

@@ -18,10 +18,11 @@ import com.genadidharma.lafar.ui.discover.DiscoverFragmentDirections
 import com.genadidharma.lafar.ui.profile.ProfileFragmentDirections
 import com.genadidharma.lafar.util.contentView
 import com.google.android.material.transition.MaterialElevationScale
+import com.google.android.material.transition.MaterialFadeThrough
 
 class MainActivity : AppCompatActivity(),
         Toolbar.OnMenuItemClickListener,
-        NavController.OnDestinationChangedListener{
+        NavController.OnDestinationChangedListener {
 
     private val binding: ActivityMainBinding by contentView(R.layout.activity_main)
 
@@ -33,6 +34,12 @@ class MainActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        currentNavigationFragment?.apply {
+            exitTransition = MaterialFadeThrough().apply {
+                duration = resources.getInteger(R.integer.lafar_motion_duration_large).toLong()
+            }
+        }
+
         setupBottomNavigationAndFab()
     }
 
@@ -68,7 +75,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
-        when(destination.id){
+        when (destination.id) {
             R.id.homeFragment -> {
                 setBottomAppBarForHome(R.menu.botom_app_bar_menu)
             }
@@ -94,7 +101,7 @@ class MainActivity : AppCompatActivity(),
         findNavController(R.id.nav_host_fragment).navigate(directions)
     }
 
-    private fun setBottomAppBarForDiscover(){
+    private fun setBottomAppBarForDiscover() {
         hideBottomAppBar()
     }
 
@@ -113,6 +120,7 @@ class MainActivity : AppCompatActivity(),
                     bottomAppBar.visibility = View.GONE
                     fab.visibility = View.INVISIBLE
                 }
+
                 override fun onAnimationCancel(animation: Animator?) {
                     isCanceled = true
                 }

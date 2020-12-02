@@ -17,13 +17,14 @@ data class Menu(
         val id: @RawValue Int,
         val type: @RawValue MenuType,
         val name: @RawValue String,
-        @DrawableRes val image: @RawValue Int,
+        @DrawableRes val images: @RawValue List<Int>,
         val price: @RawValue Long,
         val desc: @RawValue String,
         val addOns: @RawValue List<AddOn>
 ) : Parcelable
 
 data class AddOn(
+        val id: Int,
         val name: String,
         @DrawableRes val image: Int,
         val price: Long
@@ -39,4 +40,9 @@ enum class MenuType(val titleRes: Int) {
 object MenuDiffCallback : DiffUtil.ItemCallback<Menu>() {
     override fun areItemsTheSame(oldItem: Menu, newItem: Menu): Boolean = oldItem.id == newItem.id
     override fun areContentsTheSame(oldItem: Menu, newItem: Menu): Boolean = oldItem.id == newItem.id
+}
+
+object AddonDiffCallback : DiffUtil.ItemCallback<AddOn>() {
+    override fun areItemsTheSame(oldItem: AddOn, newItem: AddOn): Boolean = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: AddOn, newItem: AddOn): Boolean = oldItem.id == newItem.id
 }

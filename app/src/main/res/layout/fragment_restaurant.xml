@@ -11,22 +11,24 @@
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_restaurant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:paddingBottom="@dimen/bottom_app_bar_height"
         android:transitionName="@string/home_to_restaurant_detail_transition">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_section"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingBottom="@dimen/bottom_app_bar_height"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent">
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
@@ -179,7 +181,7 @@
                         android:textAppearance="@style/TextAppearance.Lafar.Button"
                         app:layout_constraintEnd_toEndOf="@+id/tv_rating"
                         app:layout_constraintStart_toEndOf="@+id/imageView14"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_rating" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tl_section"

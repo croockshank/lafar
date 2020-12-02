@@ -19,6 +19,8 @@
         android:layout_height="@dimen/card_restaurant_md_height"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="@{(view) -> listener.onRestaurantClicked(view, restaurant)}"
+        android:transitionName="@{@string/home_to_restaurant_transition_name(restaurant.id)}"
         app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout

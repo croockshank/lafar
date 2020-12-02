@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="com.genadidharma.lafar.util.TextUtil" />
+
         <variable
             name="menu"
             type="com.genadidharma.lafar.data.Menu" />
@@ -11,13 +14,16 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:transitionName="@string/menu_to_detial_transition">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_addon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -80,6 +86,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
+                        android:text="@{TextUtil.formatRupiah(menu.price, true)}"
                         android:textAppearance="@style/TextAppearance.Lafar.Headline1"
                         android:textColor="?colorSecondary"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_title"
@@ -90,13 +97,13 @@
                         android:id="@+id/tv_description"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:text="@{menu.desc}"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textAppearance="@style/TextAppearance.Lafar.Body2"
                         android:textColor="@color/lafar_white_600"
                         app:layout_constraintEnd_toEndOf="@+id/tv_price"
                         app:layout_constraintStart_toStartOf="@+id/tv_title"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
                     <TextView
                         android:id="@+id/textView11"

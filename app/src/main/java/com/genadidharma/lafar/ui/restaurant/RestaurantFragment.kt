@@ -1,16 +1,22 @@
 package com.genadidharma.lafar.ui.restaurant
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.genadidharma.lafar.R
 import com.genadidharma.lafar.data.Restaurant
-import com.genadidharma.lafar.databinding.*
+import com.genadidharma.lafar.databinding.FragmentRestaurantBinding
+import com.genadidharma.lafar.databinding.ItemRestaurantFeatureChipBinding
 import com.genadidharma.lafar.ui.home.FriendsAttachmentAdapter
 import com.genadidharma.lafar.util.MarginItemDecorationHorizontal
+import com.genadidharma.lafar.util.themeColor
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialElevationScale
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 
 class RestaurantFragment : Fragment() {
@@ -22,6 +28,19 @@ class RestaurantFragment : Fragment() {
     private val restaurantCarouselAdapter = ImageCarouselAdapter()
     private val friendsAttachmentAdapter = FriendsAttachmentAdapter()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = MaterialContainerTransform().apply {
+            drawingViewId = R.id.nav_host_fragment
+            duration = resources.getInteger(R.integer.lafar_motion_duration_large).toLong()
+            scrimColor = Color.TRANSPARENT
+            setAllContainerColors(requireContext().themeColor(R.attr.colorSurface))
+        }
+        reenterTransition = MaterialElevationScale(true).apply {
+            duration = resources.getInteger(R.integer.lafar_motion_duration_large).toLong()
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentRestaurantBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,6 +49,7 @@ class RestaurantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.restaurant = restaurant
+        ViewCompat.requestApplyInsets(binding.clRestaurant)
 
         initCarouselImages()
         initFeatureChips()

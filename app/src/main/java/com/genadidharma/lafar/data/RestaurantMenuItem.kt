@@ -14,19 +14,23 @@ object RestaurantMenuItem {
                                     1,
                                     MenuType.BEST_SELLER,
                                     "Nasi Kotak Biasa",
-                                    R.drawable.img_restaurant_1,
+                                    listOf(
+                                            R.drawable.img_restaurant_1
+                                    ),
                                     30000,
                                     "Nasi, ayam betutu, sate, urap, telor, kacang saur, sambel",
                                     listOf(
                                             AddOn(
+                                                    1,
                                                     "Sate Lilit",
                                                     R.drawable.ic_section_menu,
-                                                    20000
+                                                    2000
                                             ),
                                             AddOn(
+                                                    2,
                                                     "Sambal",
                                                     R.drawable.ic_section_menu,
-                                                    10000
+                                                    1000
                                             )
                                     )
                             ),
@@ -34,19 +38,23 @@ object RestaurantMenuItem {
                                     2,
                                     MenuType.BEST_SELLER,
                                     "Betutu Upih",
-                                    R.drawable.img_restaurant_1,
+                                    listOf(
+                                            R.drawable.img_restaurant_1
+                                    ),
                                     30000,
                                     "1 ekor ayam betutu yang sudah dimasak dan dibumbui",
                                     listOf(
                                             AddOn(
+                                                    1,
                                                     "Sate Lilit",
                                                     R.drawable.ic_section_menu,
-                                                    20000
+                                                    2000
                                             ),
                                             AddOn(
+                                                    2,
                                                     "Sambal",
                                                     R.drawable.ic_section_menu,
-                                                    10000
+                                                    1000
                                             )
                                     )
                             ),
@@ -54,19 +62,23 @@ object RestaurantMenuItem {
                                     5,
                                     MenuType.PROMO_WEEKEND,
                                     "Ayam Betutu Takilan",
-                                    R.drawable.img_restaurant_1,
+                                    listOf(
+                                            R.drawable.img_restaurant_1
+                                    ),
                                     30000,
                                     "Ayam betutu yang kaya rasa dengan kuah yang gurih, ditemani dengan sate, urap, dan telur asin serta dipadukan dengan nasi dan sambal ",
                                     listOf(
                                             AddOn(
+                                                    1,
                                                     "Sate Lilit",
                                                     R.drawable.ic_section_menu,
-                                                    20000
+                                                    2000
                                             ),
                                             AddOn(
+                                                    2,
                                                     "Sambal",
                                                     R.drawable.ic_section_menu,
-                                                    10000
+                                                    1000
                                             )
                                     )
                             )
@@ -83,6 +95,20 @@ object RestaurantMenuItem {
             }?.menu?.filter {
                 it.type == type
             }?.toList()
+        }
+    }
+
+    fun getMenus(restaurant: Restaurant?): LiveData<List<Menu>> {
+        return Transformations.map(_menus) { menu ->
+            menu.find {
+                it.restaurant == restaurant
+            }?.menu?.toList()
+        }
+    }
+
+    fun getMenus(): LiveData<List<Menu>> {
+        return Transformations.map(_menus) {
+            menus[0].menu
         }
     }
 

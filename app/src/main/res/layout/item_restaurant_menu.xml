@@ -6,6 +6,8 @@
 
     <data>
 
+        <import type="com.genadidharma.lafar.util.TextUtil" />
+
         <variable
             name="menu"
             type="com.genadidharma.lafar.data.Menu" />
@@ -20,8 +22,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius"
+        android:onClick="@{(view) -> listener.onMenuClicked(view, menu)}"
+        android:transitionName="@{@string/menu_to_detail_transition_name(menu.id)}"
         app:cardBackgroundColor="@color/lafar_white_50"
+        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +46,7 @@
                 <ImageView
                     android:id="@+id/iv_menu"
                     glideCenterCrop="@{true}"
-                    glideSrc="@{menu.image}"
+                    glideSrc="@{menu.images[0]}"
                     android:layout_width="@dimen/image_card_restaurant_size"
                     android:layout_height="@dimen/image_card_restaurant_size"
                     android:contentDescription="@{menu.name}"
@@ -85,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="24dp"
+                android:text="@{TextUtil.formatRupiah(menu.price, false)}"
                 android:textAppearance="@style/TextAppearance.Lafar.Subtitle1.Bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tv_desc"

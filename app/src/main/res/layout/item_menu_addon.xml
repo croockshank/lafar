@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="com.genadidharma.lafar.util.TextUtil" />
+
         <variable
             name="addon"
             type="com.genadidharma.lafar.data.AddOn" />
@@ -14,11 +17,11 @@
 
         <ImageView
             android:id="@+id/iv_icon"
+            glideSrc="@{addon.image}"
             android:layout_width="@dimen/lg_margin_padding"
             android:layout_height="@dimen/lg_margin_padding"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            glideSrc="@{addon.image}" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -48,6 +51,7 @@
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{TextUtil.formatRupiah(addon.price, true)}"
             android:textAppearance="@style/TextAppearance.Lafar.Button"
             app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintEnd_toEndOf="parent"
