@@ -39,7 +39,8 @@ object RestaurantItem {
                     2,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_1,
+                            R.drawable.img_restaurant_2
                     ),
                     4.3,
                     listOf(
