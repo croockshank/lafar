@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="review"
+            type="com.genadidharma.lafar.data.Review" />
+
+        <variable
+            name="listener"
+            type="com.genadidharma.lafar.ui.restaurant.sections.review.ReviewSectionAdapter.ReviewSectionAdapterListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/review_card_width"
+        android:layout_height="@dimen/review_card_height"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/lafar_white_50"
+        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                glideSrc="@{review.person.image}"
+                android:layout_width="@dimen/profile_icon_size_lg"
+                android:layout_height="@dimen/profile_icon_size_lg"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="@{review.person.name}"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline3"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+                app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+                app:layout_constraintEnd_toStartOf="@+id/tv_rating"
+                app:layout_constraintTop_toTopOf="@+id/tv_name"
+                app:srcCompat="@drawable/ic_baseline_star_24" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text='@{String.format("%.1f", review.rating)}'
+                android:textAppearance="@style/TextAppearance.Lafar.Headline4"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{review.date}"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline4.Medium"
+                android:textColor="@color/color_on_surface_emphasis_disabled"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_translate"
+                goneIf="@{review.indonesian}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/translate_label"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline4.Medium"
+                android:textColor="?colorSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+                app:layout_constraintStart_toEndOf="@+id/tv_date"
+                app:layout_constraintTop_toTopOf="@+id/tv_date" />
+
+            <TextView
+                android:id="@+id/tv_review"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="@{review.review}"
+                android:textStyle="italic"
+                android:textAppearance="@style/TextAppearance.Lafar.Subtitle2"
+                app:layout_constraintBottom_toTopOf="@+id/chip_comments"
+                app:layout_constraintEnd_toEndOf="@+id/tv_rating"
+                app:layout_constraintStart_toStartOf="@+id/tv_date"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_likes"
+                style="@style/Widget.Lafar.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:text='@{String.format("%s", review.favoriteCount)}'
+                android:textAppearance="@style/TextAppearance.Lafar.Caption"
+                app:chipIcon="@drawable/ic_favorite_filled_24"
+                app:chipMinTouchTargetSize="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_comments"
+                style="@style/Widget.Lafar.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:text='@{String.format("%s", review.commentCount)}'
+                android:textAppearance="@style/TextAppearance.Lafar.Caption"
+                app:chipIcon="@drawable/ic_comment_border_24"
+                app:chipMinTouchTargetSize="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/chip_likes"
+                app:layout_constraintStart_toEndOf="@+id/chip_likes"
+                app:layout_constraintTop_toTopOf="@+id/chip_likes" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_baseline_add_16"
+                app:backgroundTint="@color/lafar_white_50"
+                app:elevation="@dimen/cardview_default_elevation"
+                app:ensureMinTouchTargetSize="false"
+                app:fabCustomSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/chip_comments"
+                app:layout_constraintEnd_toEndOf="@+id/tv_rating"
+                app:layout_constraintTop_toTopOf="@+id/chip_comments"
+                app:tint="?colorSecondary" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

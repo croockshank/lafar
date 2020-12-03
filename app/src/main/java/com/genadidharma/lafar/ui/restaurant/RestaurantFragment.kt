@@ -92,7 +92,9 @@ class RestaurantFragment : Fragment() {
         binding.rvRelatedFriends.addItemDecoration(MarginItemDecorationHorizontal(
                 0,
                 0,
-                resources.getDimensionPixelSize(R.dimen.sm_margin_padding)
+                resources.getDimensionPixelSize(R.dimen.sm_margin_padding),
+                0,
+                0
         ))
         binding.rvRelatedFriends.adapter = friendsAttachmentAdapter
         friendsAttachmentAdapter.submitList(restaurant.friends)

@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class MarginItemDecorationHorizontal(private val startAndEnd: Int, private val rightSize: Int, private val leftSize: Int) : RecyclerView.ItemDecoration() {
+class MarginItemDecorationHorizontal(private val startAndEnd: Int, private val topSize: Int, private val rightSize: Int, private val bottomSize: Int, private val leftSize: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, view: View,
                                 parent: RecyclerView, state: RecyclerView.State) {
 
@@ -33,6 +33,10 @@ class MarginItemDecorationHorizontal(private val startAndEnd: Int, private val r
                     right = rightSize
                 }
             }
+        }
+        with(outRect){
+            top = topSize
+            bottom = bottomSize
         }
     }
 }

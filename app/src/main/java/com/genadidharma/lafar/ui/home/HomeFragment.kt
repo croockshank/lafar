@@ -84,6 +84,8 @@ class HomeFragment :
         binding.rvLagiNgetrendBanget.addItemDecoration(MarginItemDecorationHorizontal(
                 resources.getDimension(R.dimen.md_margin_padding).toInt(),
                 0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt(),
+                0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))
         RestaurantItem.getRestaurants(RestaurantSection.LAGI_NGETREND_BANGET, CuisineItem.getCuisine(CuisineType.SEMUA)).observe(viewLifecycleOwner) {
@@ -95,6 +97,8 @@ class HomeFragment :
         binding.rvTempatnyaInstagrammable.adapter = restaurantMdAdapter
         binding.rvTempatnyaInstagrammable.addItemDecoration(MarginItemDecorationHorizontal(
                 resources.getDimension(R.dimen.md_margin_padding).toInt(),
+                0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt(),
                 0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))

@@ -35,8 +35,8 @@ class RestaurantSectionPagerAdapter(private val context: Context,
     override fun getItem(position: Int): Fragment {
         return when (getItemType(position)) {
             SectionFragments.MENU -> MenuSectionFragment().newInstance(restaurant)
-            SectionFragments.GALLERY -> GallerySectionFragment()
-            SectionFragments.REVIEW -> ReviewSectionFragment()
+            SectionFragments.GALLERY -> GallerySectionFragment().newInstance(restaurant)
+            SectionFragments.REVIEW -> ReviewSectionFragment().newInstance(restaurant)
         }
     }
 }

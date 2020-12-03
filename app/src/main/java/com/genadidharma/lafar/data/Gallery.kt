@@ -1,18 +1,20 @@
 package com.genadidharma.lafar.data
 
 import androidx.annotation.DrawableRes
+import androidx.recyclerview.widget.DiffUtil
 
 data class Gallery(
-        val type: GalleryType,
         val restaurant: Restaurant?,
         val assets: List<Asset>
 )
 
 data class Asset(
+        val galleryType: GalleryType,
         val id: Int,
-        val type: AssetType,
+        val assetType: AssetType,
         @DrawableRes val asset: Int,
-        val person: Person?
+        val person: Person?,
+        val date: String?
 )
 
 enum class GalleryType {
@@ -23,4 +25,9 @@ enum class GalleryType {
 enum class AssetType{
     IMAGE,
     VIDEO
+}
+
+object AssetDiffCallback : DiffUtil.ItemCallback<Asset>() {
+    override fun areItemsTheSame(oldItem: Asset, newItem: Asset): Boolean = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: Asset, newItem: Asset): Boolean = oldItem.id == newItem.id
 }

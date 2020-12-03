@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.genadidharma.lafar.data.AssetType" />
+
+        <variable
+            name="asset"
+            type="com.genadidharma.lafar.data.Asset" />
+
+        <variable
+            name="listener"
+            type="com.genadidharma.lafar.ui.restaurant.sections.gallery.GalleryAssetSectionAdapter.GalleryAssetSectionAdapterListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            glideCenterCrop="@{true}"
+            glideSrc="@{asset.asset}"
+            android:layout_width="@dimen/restaurant_gallery_image_md_width"
+            android:layout_height="@dimen/restaurant_gallery_image_md_height"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lafar.Image.Gallery" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            goneIf="@{asset.assetType == AssetType.IMAGE}"
+            android:layout_width="@dimen/restaurant_gallery_image_md_width"
+            android:layout_height="@dimen/restaurant_gallery_image_md_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lafar.Image.Gallery"
+            app:srcCompat="@drawable/bg_restaurant_item" />
+
+        <ImageButton
+            goneIf="@{asset.assetType == AssetType.IMAGE}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/play_button_label"
+            android:src="@drawable/ic_play_32" />
+
+    </FrameLayout>
+</layout>

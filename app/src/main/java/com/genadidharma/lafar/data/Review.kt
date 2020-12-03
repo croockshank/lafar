@@ -1,8 +1,9 @@
 package com.genadidharma.lafar.data
 
-import java.util.*
+import androidx.recyclerview.widget.DiffUtil
 
 data class Review(
+        val id: Int,
         val restaurant: Restaurant?,
         val type: ReviewType,
         val person: Person?,
@@ -14,7 +15,13 @@ data class Review(
         val commentCount: Int
 )
 
-enum class ReviewType{
+enum class ReviewType {
     ULASAN_TERAKHIR,
     ULASAN_TEMAN
+}
+
+object ReviewDiffCallback : DiffUtil.ItemCallback<Review>() {
+    override fun areItemsTheSame(oldItem: Review, newItem: Review): Boolean = oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: Review, newItem: Review): Boolean = oldItem.id == newItem.id
+
 }

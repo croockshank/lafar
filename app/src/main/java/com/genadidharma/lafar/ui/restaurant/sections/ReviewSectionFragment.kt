@@ -1,58 +1,92 @@
 package com.genadidharma.lafar.ui.restaurant.sections
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.genadidharma.lafar.R
+import com.genadidharma.lafar.data.Restaurant
+import com.genadidharma.lafar.data.Review
+import com.genadidharma.lafar.data.ReviewItem
+import com.genadidharma.lafar.databinding.FragmentReviewSectionBinding
+import com.genadidharma.lafar.ui.restaurant.sections.review.ReviewSectionAdapter
+import com.genadidharma.lafar.util.MarginItemDecorationHorizontal
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ReviewSectionFragment :
+        Fragment(),
+        ReviewSectionAdapter.ReviewSectionAdapterListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ReviewSectionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ReviewSectionFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    companion object {
+        val TAG = ReviewSectionFragment::class.simpleName
+        const val RESTAURANT_TAG = "restaurant"
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private lateinit var binding: FragmentReviewSectionBinding
+
+    private var restaurant: Restaurant? = null
+    private val ulasanTerakhirSectionAdapter = ReviewSectionAdapter(this)
+    private val ulasanTemanSectionAdapter = ReviewSectionAdapter(this)
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val bundle = this.arguments
+        restaurant = bundle?.getParcelable(GallerySectionFragment.RESTAURANT_TAG)
+
+        binding = FragmentReviewSectionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initUlasanTerakhirSection()
+        initUlasanTemanSection()
+    }
+
+    fun initUlasanTerakhirSection() {
+        binding.rvUlasanTerakhir.adapter = ulasanTerakhirSectionAdapter
+        binding.rvUlasanTerakhir.addItemDecoration(MarginItemDecorationHorizontal(
+                resources.getDimension(R.dimen.md_margin_padding).toInt(),
+                0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt(),
+                0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt()
+        ))
+        ReviewItem.getReviews().observe(viewLifecycleOwner) {
+            ulasanTerakhirSectionAdapter.submitList(it)
+
+            Log.i(TAG, "Review: $it")
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review_section, container, false)
+    fun initUlasanTemanSection() {
+        binding.rvUlasanTeman.adapter = ulasanTemanSectionAdapter
+        binding.rvUlasanTeman.addItemDecoration(MarginItemDecorationHorizontal(
+                resources.getDimension(R.dimen.md_margin_padding).toInt(),
+                0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt(),
+                0,
+                resources.getDimension(R.dimen.sm_margin_padding).toInt()
+        ))
+        ReviewItem.getReviews().observe(viewLifecycleOwner) {
+            ulasanTemanSectionAdapter.submitList(it)
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReviewSectionFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                ReviewSectionFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    fun newInstance(restaurant: Restaurant): ReviewSectionFragment {
+        val fragment = ReviewSectionFragment()
+        val bundle = Bundle()
+        bundle.putParcelable(RESTAURANT_TAG, restaurant)
+        fragment.arguments = bundle
+        return fragment
+    }
+
+    override fun onReviewClick(cardView: View, review: Review) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onAddCommentClick(review: Review) {
+        TODO("Not yet implemented")
     }
 }

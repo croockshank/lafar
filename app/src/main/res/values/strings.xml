@@ -34,4 +34,10 @@
     <string name="menu_to_detail_transition_name">menu_detail_card_%1$s</string>
     <string name="menu_to_detial_transition">Menu to Menu Detail Transition</string>
     <string name="menu_addon_title">Tambahan</string>
+    <string name="section_album_title">Album</string>
+    <string name="postingan_teman_kamu_section_title">Postingan Teman Kamu</string>
+    <string name="ulasan_terakhir_section_title">Ulasan Terakhir</string>
+    <string name="ulasan_teman_kamu_section_title">Ulasan Teman Kamu</string>
+    <string name="play_button_label">Play Button</string>
+    <string name="translate_label">Terjemahkan</string>
 </resources>

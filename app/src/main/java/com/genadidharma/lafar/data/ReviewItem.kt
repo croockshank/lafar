@@ -1,5 +1,6 @@
 package com.genadidharma.lafar.data
 
+import GalleryItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -7,6 +8,7 @@ import androidx.lifecycle.Transformations
 object ReviewItem {
     val reviews = listOf(
             Review(
+                    1,
                     RestaurantItem.getRestaurant(1),
                     ReviewType.ULASAN_TEMAN,
                     PersonItem.getPerson(3),
@@ -19,7 +21,7 @@ object ReviewItem {
                     20,
                     13
             ),
-            Review(
+            Review(1,
                     RestaurantItem.getRestaurant(1),
                     ReviewType.ULASAN_TERAKHIR,
                     PersonItem.getPerson(4),
@@ -44,7 +46,13 @@ object ReviewItem {
         }
     }
 
+    fun getReviews() : LiveData<List<Review>>{
+        return Transformations.map(_reviews) { reviews ->
+            reviews
+        }
+    }
+
     init {
-        GalleryItem._galleries.value = GalleryItem.galleries
+        _reviews.value = reviews
     }
 }

@@ -68,7 +68,9 @@ class RestaurantAdapter(
                 this.rvRelatedFriends.addItemDecoration(MarginItemDecorationHorizontal(
                         0,
                         0,
-                        binding.root.context.resources.getDimensionPixelSize(R.dimen.sm_margin_padding)
+                        binding.root.context.resources.getDimensionPixelSize(R.dimen.sm_margin_padding),
+                        0,
+                        0
                 ))
                 this.rvRelatedFriends.adapter = attachmentAdapter
             }

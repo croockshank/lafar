@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.genadidharma.lafar.data.AssetType" />
+
+        <variable
+            name="asset"
+            type="com.genadidharma.lafar.data.Asset" />
+
+        <variable
+            name="listener"
+            type="com.genadidharma.lafar.ui.restaurant.sections.gallery.GalleryAssetSectionAdapter.GalleryAssetSectionAdapterListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            glideCenterCrop="@{true}"
+            glideSrc="@{asset.asset}"
+            android:layout_width="@dimen/restaurant_gallery_image_lg_width"
+            android:layout_height="@dimen/restaurant_gallery_image_lg_height"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lafar.Image.Gallery" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/restaurant_gallery_image_lg_width"
+            android:layout_height="@dimen/restaurant_gallery_image_lg_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Lafar.Image.Gallery"
+            app:srcCompat="@drawable/bg_restaurant_item" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            glideSrc="@{asset.person.image}"
+            android:layout_width="@dimen/profile_icon_size_lg"
+            android:layout_height="@dimen/profile_icon_size_lg"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{asset.person.name}"
+            android:textAppearance="@style/TextAppearance.Lafar.Body2"
+            android:textColor="?colorOnPrimary"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{asset.date}"
+            android:textAppearance="@style/TextAppearance.Lafar.Overline"
+            android:textColor="?colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

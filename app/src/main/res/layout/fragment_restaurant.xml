@@ -43,7 +43,7 @@
 
                     <com.smarteist.autoimageslider.SliderView
                         android:id="@+id/sv_images"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="@dimen/image_restaurant_detail_height"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.restaurant.sections.GallerySectionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_album"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:text="@string/section_album_title"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline3"
+                app:layout_constraintEnd_toStartOf="@+id/iv_chevron_album"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_chevron_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/chevron_lagi_ngetrend_banget_description"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_album"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_album" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_album"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_album" />
+
+            <TextView
+                android:id="@+id/tv_postingan_teman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:text="@string/postingan_teman_kamu_section_title"
+                android:textAppearance="@style/TextAppearance.Lafar.Headline3"
+                app:layout_constraintEnd_toStartOf="@+id/iv_chevron_postingan_teman"
+                app:layout_constraintStart_toStartOf="@+id/tv_album"
+                app:layout_constraintTop_toBottomOf="@+id/rv_album" />
+
+            <ImageView
+                android:id="@+id/iv_chevron_postingan_teman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/chevron_lagi_ngetrend_banget_description"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_postingan_teman"
+                app:layout_constraintEnd_toEndOf="@+id/iv_chevron_album"
+                app:layout_constraintTop_toTopOf="@+id/tv_postingan_teman" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_postingan_teman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_postingan_teman" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
