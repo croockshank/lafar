@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.genadidharma.lafar.data.MenuType
 import com.genadidharma.lafar.data.Restaurant
 import com.genadidharma.lafar.databinding.FragmentMenuSectionBinding
@@ -17,6 +19,7 @@ class MenuSectionFragment : Fragment(),
     companion object {
         val TAG = MenuSectionFragment::class.simpleName
         const val RESTAURANT_TAG = "restaurant"
+        lateinit var viewModel: MenuSectionViewModel
     }
 
     private lateinit var binding: FragmentMenuSectionBinding
@@ -57,6 +60,11 @@ class MenuSectionFragment : Fragment(),
     override fun onTabSelected(tab: TabLayout.Tab?) {
         menuType = MenuType.values().find {
             resources.getString(it.titleRes) == tab?.text
+        }
+
+        val factory = MenuSectionViewModelFactory()
+        viewModel = ViewModelProvider(this, factory).get(MenuSectionViewModel::class.java).apply {
+            getMenus(restaurant, menuType)
         }
     }
 

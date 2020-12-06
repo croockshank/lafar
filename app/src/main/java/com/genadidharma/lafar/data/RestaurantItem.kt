@@ -180,9 +180,9 @@ object RestaurantItem {
     }
 
     fun getRestaurant(id: Int): Restaurant? {
-        return Transformations.map(_restaurants) { restaurant ->
-            restaurant.find { it.id == id }
-        }.value
+        return restaurants.find {
+            it.id == id
+        }
     }
 
     init {

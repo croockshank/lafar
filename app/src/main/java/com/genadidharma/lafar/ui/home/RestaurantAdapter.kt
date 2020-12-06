@@ -47,6 +47,7 @@ class RestaurantAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(restaurant: Restaurant) {
             binding.restaurant = restaurant
+            binding.cgType.removeAllViews()
             binding.cgType.run {
                 binding.restaurant?.types?.forEach {
                     val chipBinding = ItemRestaurantTypeChipBinding.inflate(

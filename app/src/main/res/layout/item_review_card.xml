@@ -17,9 +17,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/review_card_width"
         android:layout_height="@dimen/review_card_height"
-        app:cardElevation="0dp"
         app:cardBackgroundColor="@color/lafar_white_50"
-        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius">
+        app:cardCornerRadius="@dimen/lafar_lg_component_corner_radius"
+        app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -102,8 +102,8 @@
                 android:maxLines="2"
                 android:singleLine="false"
                 android:text="@{review.review}"
-                android:textStyle="italic"
                 android:textAppearance="@style/TextAppearance.Lafar.Subtitle2"
+                android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/chip_comments"
                 app:layout_constraintEnd_toEndOf="@+id/tv_rating"
                 app:layout_constraintStart_toStartOf="@+id/tv_date"
@@ -131,6 +131,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:elevation="@dimen/cardview_default_elevation"
+                android:focusable="false"
+                android:clickable="false"
                 android:text='@{String.format("%s", review.commentCount)}'
                 android:textAppearance="@style/TextAppearance.Lafar.Caption"
                 app:chipIcon="@drawable/ic_comment_border_24"

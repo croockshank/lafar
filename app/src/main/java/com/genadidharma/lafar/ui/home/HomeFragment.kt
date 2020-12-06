@@ -2,6 +2,7 @@ package com.genadidharma.lafar.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,11 @@ class HomeFragment :
         Fragment(),
         ChipGroup.OnCheckedChangeListener,
         RestaurantAdapter.RestaurantAdapterListener {
+
+    companion object {
+        val TAG = HomeFragment::class.simpleName
+    }
+
     private lateinit var binding: FragmentHomeBinding
 
     private var checkedCuisine: Cuisine? = null
@@ -63,8 +69,8 @@ class HomeFragment :
     @SuppressLint("ResourceType")
     private fun initCuisineChips() {
         binding.cgCuisine.run {
-            CuisineItem.getCuisines().observe(viewLifecycleOwner) {
-                it.forEach {
+            CuisineItem.getCuisines().observe(viewLifecycleOwner) { cuisines ->
+                cuisines.forEach {
                     val chipBinding = ItemCuisineChipBinding.inflate(
                             LayoutInflater.from(context),
                             this,
@@ -73,10 +79,10 @@ class HomeFragment :
                         cuisine = it
                     }
                     addView(chipBinding.root)
+                    chipBinding.root.id = it.key.id
                 }
             }
         }
-        binding.cgCuisine.check(1)
     }
 
     private fun initYangLagiNgetrendSection() {
@@ -88,9 +94,6 @@ class HomeFragment :
                 0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))
-        RestaurantItem.getRestaurants(RestaurantSection.LAGI_NGETREND_BANGET, CuisineItem.getCuisine(CuisineType.SEMUA)).observe(viewLifecycleOwner) {
-            restaurantBgAdapter.submitList(it)
-        }
     }
 
     private fun initTempatnyaInstagrammable() {
@@ -102,14 +105,21 @@ class HomeFragment :
                 0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))
-        RestaurantItem.getRestaurants(RestaurantSection.TEMPATNYA_INSTAGRAMMABLE, CuisineItem.getCuisine(CuisineType.SEMUA)).observe(viewLifecycleOwner) {
-            restaurantMdAdapter.submitList(it)
-        }
     }
 
     override fun onCheckedChanged(group: ChipGroup?, checkedId: Int) {
         checkedCuisine = CuisineItem.getCuisine(checkedId)
-//        initYangLagiNgetrendSection()
+
+        restaurantBgAdapter.submitList(null)
+        restaurantMdAdapter.submitList(null)
+
+        RestaurantItem.getRestaurants(RestaurantSection.LAGI_NGETREND_BANGET, checkedCuisine).observe(viewLifecycleOwner) {
+            restaurantBgAdapter.submitList(it)
+        }
+
+        RestaurantItem.getRestaurants(RestaurantSection.TEMPATNYA_INSTAGRAMMABLE, checkedCuisine).observe(viewLifecycleOwner) {
+            restaurantMdAdapter.submitList(it)
+        }
     }
 
     override fun onRestaurantClicked(cardView: View, restaurant: Restaurant) {

@@ -5,7 +5,8 @@ import androidx.annotation.DrawableRes
 data class Cuisine(
         val key: CuisineType,
         val name: String,
-        @DrawableRes val image: Int
+        @DrawableRes val image: Int,
+        var checked: Boolean
 )
 
 enum class CuisineType(val id: Int, val type: String){

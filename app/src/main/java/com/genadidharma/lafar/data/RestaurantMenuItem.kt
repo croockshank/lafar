@@ -88,9 +88,13 @@ object RestaurantMenuItem {
 
     private val _menus: MutableLiveData<List<RestaurantMenu>> = MutableLiveData()
 
+    fun getAllMenus(): MutableLiveData<List<RestaurantMenu>> {
+        return _menus
+    }
+
     fun getMenus(restaurant: Restaurant?, type: MenuType?): LiveData<List<Menu>> {
-        return Transformations.map(_menus) { menu ->
-            menu.find {
+        return Transformations.map(_menus) { restaurantMenu ->
+            restaurantMenu.find {
                 it.restaurant == restaurant
             }?.menu?.filter {
                 it.type == type
@@ -98,10 +102,10 @@ object RestaurantMenuItem {
         }
     }
 
-    fun getMenus(restaurant: Restaurant?): LiveData<List<Menu>> {
+    fun getMenus(restaurantId: Int?): LiveData<List<Menu>> {
         return Transformations.map(_menus) { menu ->
             menu.find {
-                it.restaurant == restaurant
+                it.restaurant?.id == restaurantId
             }?.menu?.toList()
         }
     }

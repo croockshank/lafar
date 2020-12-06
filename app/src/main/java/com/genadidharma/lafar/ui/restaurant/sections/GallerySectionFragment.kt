@@ -27,7 +27,8 @@ class GallerySectionFragment :
     private lateinit var binding: FragmentGallerySectionBinding
 
     private var restaurant: Restaurant? = null
-    private val gallerySectionAdapter = GalleryAssetSectionAdapter(this)
+    private val albumSectionAdapter = GalleryAssetSectionAdapter(this)
+    private val postinganTemanSectionAdapter = GalleryAssetSectionAdapter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val bundle = this.arguments
@@ -42,12 +43,12 @@ class GallerySectionFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initGallerySection()
+        initAlbumSection()
         initPostinganTemanSection()
     }
 
-    private fun initGallerySection() {
-        binding.rvAlbum.adapter = gallerySectionAdapter
+    private fun initAlbumSection() {
+        binding.rvAlbum.adapter = albumSectionAdapter
         binding.rvAlbum.addItemDecoration(MarginItemDecorationHorizontal(
                 resources.getDimension(R.dimen.md_margin_padding).toInt(),
                 0,
@@ -55,13 +56,13 @@ class GallerySectionFragment :
                 0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))
-        GalleryItem.getGalleries()?.observe(viewLifecycleOwner) {
-            gallerySectionAdapter.submitList(it)
+        GalleryItem.getGalleries(restaurant, GalleryType.ALBUM)?.observe(viewLifecycleOwner) {
+            albumSectionAdapter.submitList(it)
         }
     }
 
     private fun initPostinganTemanSection() {
-        binding.rvPostinganTeman.adapter = gallerySectionAdapter
+        binding.rvPostinganTeman.adapter = postinganTemanSectionAdapter
         binding.rvPostinganTeman.addItemDecoration(MarginItemDecorationHorizontal(
                 resources.getDimension(R.dimen.md_margin_padding).toInt(),
                 0,
@@ -69,8 +70,8 @@ class GallerySectionFragment :
                 0,
                 resources.getDimension(R.dimen.sm_margin_padding).toInt()
         ))
-        GalleryItem.getGalleries()?.observe(viewLifecycleOwner) {
-            gallerySectionAdapter.submitList(it)
+        GalleryItem.getGalleries(restaurant, GalleryType.POSTINGAN_TEMAN)?.observe(viewLifecycleOwner) {
+            postinganTemanSectionAdapter.submitList(it)
 
             Log.i(TAG, "Galleries item: $it")
         }

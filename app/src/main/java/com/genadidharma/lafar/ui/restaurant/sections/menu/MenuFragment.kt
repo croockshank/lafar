@@ -6,20 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.genadidharma.lafar.R
 import com.genadidharma.lafar.data.Menu
 import com.genadidharma.lafar.data.MenuType
 import com.genadidharma.lafar.data.Restaurant
-import com.genadidharma.lafar.data.RestaurantMenuItem
 import com.genadidharma.lafar.databinding.FragmentMenuBinding
+import com.genadidharma.lafar.ui.restaurant.MenuSectionViewState
 import com.genadidharma.lafar.ui.restaurant.sections.MenuSectionFragment
 import com.genadidharma.lafar.ui.restaurant.sections.RestaurantMenuAdapter
 import com.genadidharma.lafar.util.MarginItemDecorationVertical
 import com.genadidharma.lafar.util.themeColor
 import com.google.android.material.transition.MaterialContainerTransform
-import com.google.android.material.transition.MaterialElevationScale
+import com.google.android.material.transition.MaterialFadeThrough
 
 
 class MenuFragment : Fragment(),
@@ -36,6 +37,13 @@ class MenuFragment : Fragment(),
     private var restaurant: Restaurant? = null
     private var menuType: MenuType? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enterTransition = MaterialFadeThrough().apply {
+            duration = resources.getInteger(R.integer.lafar_motion_duration_large).toLong()
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val bundle = this.arguments
         restaurant = bundle?.getParcelable(MenuSectionFragment.RESTAURANT_TAG)
@@ -48,6 +56,13 @@ class MenuFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initMenuList()
+
+        MenuSectionFragment.viewModel.apply {
+            viewState.observe(
+                    viewLifecycleOwner,
+                    Observer(this@MenuFragment::handleState)
+            )
+        }
     }
 
     private fun initMenuList() {
@@ -59,9 +74,13 @@ class MenuFragment : Fragment(),
                 resources.getDimensionPixelSize(R.dimen.sm_margin_padding),
                 resources.getDimensionPixelSize(R.dimen.md_margin_padding)
         ))
+    }
 
-        RestaurantMenuItem.getMenus().observe(viewLifecycleOwner) {
-            menuAdapter.submitList(it)
+    private fun handleState(viewState: MenuSectionViewState?) {
+        viewState?.let {
+            it.menus?.observe(viewLifecycleOwner) { menus ->
+                menuAdapter.submitList(menus)
+            }
         }
     }
 
