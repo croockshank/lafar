@@ -90,7 +90,9 @@ object RestaurantItem {
                     3,
                     CuisineItem.getCuisine(CuisineType.FASTFOOD),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_7,
+                            R.drawable.img_restaurant_8,
+                            R.drawable.img_restaurant_9
                     ),
                     4.3,
                     listOf(
@@ -115,7 +117,9 @@ object RestaurantItem {
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_10,
+                            R.drawable.img_restaurant_11,
+                            R.drawable.img_restaurant_12
                     ),
                     4.3,
                     listOf(
@@ -140,7 +144,9 @@ object RestaurantItem {
                     3,
                     CuisineItem.getCuisine(CuisineType.LOKAL),
                     listOf(
-                            R.drawable.img_restaurant_1
+                            R.drawable.img_restaurant_13,
+                            R.drawable.img_restaurant_14,
+                            R.drawable.img_restaurant_15
                     ),
                     4.3,
                     listOf(
