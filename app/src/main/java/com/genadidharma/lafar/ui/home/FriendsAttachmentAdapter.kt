@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.genadidharma.lafar.data.Person
 import com.genadidharma.lafar.databinding.ItemPersonProfileBinding
 
-class FriendsAttachmentAdapter : RecyclerView.Adapter<FriendsAttachmentAdapter.FriendsAttachmentAdapterViewHolder>() {
+open class FriendsAttachmentAdapter : RecyclerView.Adapter<FriendsAttachmentAdapter.FriendsAttachmentAdapterViewHolder>() {
 
     private var list: List<Person?> = mutableListOf()
 
     override fun getItemCount(): Int = list.size
+
+    override fun getItemViewType(position: Int) = getLayoutIdForPosition(position)
 
     fun submitList(attachment: List<Person?>) {
         list = attachment
@@ -35,5 +37,9 @@ class FriendsAttachmentAdapter : RecyclerView.Adapter<FriendsAttachmentAdapter.F
         fun bind(attachment: Person?) {
             binding.person = attachment
         }
+    }
+
+    open fun getLayoutIdForPosition(position: Int): Int{
+        return 0;
     }
 }

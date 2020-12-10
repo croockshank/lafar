@@ -50,6 +50,7 @@ class MenuDetailFragment : Fragment() {
         binding.svImages.setIndicatorAnimation(IndicatorAnimationType.WORM)
         binding.svImages.setSliderAdapter(menuCarouselAdapter)
         menuCarouselAdapter.addItems(menu.images)
+        binding.svImages.setInfiniteAdapterEnabled(true)
     }
 
     private fun initAddonAdapter() {

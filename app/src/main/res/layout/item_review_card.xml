@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="com.genadidharma.lafar.util.TextUtil" />
+
         <variable
             name="review"
             type="com.genadidharma.lafar.data.Review" />
@@ -73,7 +75,7 @@
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{review.date}"
+                android:text="@{TextUtil.formatPrettyDate(review.date)}"
                 android:textAppearance="@style/TextAppearance.Lafar.Headline4.Medium"
                 android:textColor="@color/color_on_surface_emphasis_disabled"
                 app:layout_constraintStart_toStartOf="@+id/tv_name"

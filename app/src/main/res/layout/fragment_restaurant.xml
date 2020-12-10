@@ -90,9 +90,7 @@
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintBottom_toBottomOf="@+id/sv_images"
                         app:layout_constraintEnd_toEndOf="@+id/tv_description"
-                        app:layout_constraintStart_toStartOf="@+id/tv_description">
-
-                    </androidx.recyclerview.widget.RecyclerView>
+                        app:layout_constraintStart_toStartOf="@+id/tv_description"/>
 
                     <HorizontalScrollView
                         android:id="@+id/hv_chip"

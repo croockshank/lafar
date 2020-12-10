@@ -15,7 +15,7 @@ object GalleryItem {
                                     AssetType.IMAGE,
                                     R.drawable.img_restaurant_16,
                                     null,
-                                    "November, 11 2020"
+                                    "November 11, 2020"
                             ),
                             Asset(
                                     GalleryType.ALBUM,
@@ -23,7 +23,7 @@ object GalleryItem {
                                     AssetType.VIDEO,
                                     R.drawable.img_restaurant_17,
                                     null,
-                                    "October, 21 2020"
+                                    "October 21, 2020"
                             ),
                             Asset(
                                     GalleryType.ALBUM,
@@ -31,7 +31,7 @@ object GalleryItem {
                                     AssetType.IMAGE,
                                     R.drawable.img_restaurant_18,
                                     null,
-                                    "November, 15 2020"
+                                    "November 15, 2020"
                             ),
                             Asset(
                                     GalleryType.POSTINGAN_TEMAN,
@@ -39,7 +39,7 @@ object GalleryItem {
                                     AssetType.IMAGE,
                                     R.drawable.img_restaurant_19,
                                     PersonItem.getPerson(4),
-                                    "September, 8 2020"
+                                    "September 8, 2020"
                             ),
                             Asset(
                                     GalleryType.POSTINGAN_TEMAN,
@@ -47,7 +47,7 @@ object GalleryItem {
                                     AssetType.VIDEO,
                                     R.drawable.img_restaurant_20,
                                     PersonItem.getPerson(2),
-                                    "December, 3 2020"
+                                    "December 3, 2020"
                             ),
                             Asset(
                                     GalleryType.POSTINGAN_TEMAN,
@@ -55,7 +55,7 @@ object GalleryItem {
                                     AssetType.IMAGE,
                                     R.drawable.img_restaurant_21,
                                     PersonItem.getPerson(3),
-                                    "November, 10 2020"
+                                    "November 10, 2020"
                             )
                     )
             )

@@ -49,7 +49,6 @@ class RestaurantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.restaurant = restaurant
-        ViewCompat.requestApplyInsets(binding.clRestaurant)
 
         initCarouselImages()
         initFeatureChips()
@@ -85,6 +84,7 @@ class RestaurantFragment : Fragment() {
         binding.svImages.setIndicatorAnimation(IndicatorAnimationType.WORM)
         binding.svImages.setSliderAdapter(restaurantCarouselAdapter)
         restaurantCarouselAdapter.addItems(restaurant.images)
+        binding.svImages.setInfiniteAdapterEnabled(true)
         initFriendsAttachmentAdapter()
     }
 

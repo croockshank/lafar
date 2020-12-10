@@ -6,6 +6,8 @@
 
         <import type="com.genadidharma.lafar.data.AssetType" />
 
+        <import type="com.genadidharma.lafar.util.TextUtil" />
+
         <variable
             name="asset"
             type="com.genadidharma.lafar.data.Asset" />
@@ -64,7 +66,7 @@
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{asset.date}"
+            android:text="@{TextUtil.formatPrettyDate(asset.date)}"
             android:textAppearance="@style/TextAppearance.Lafar.Overline"
             android:textColor="?colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"

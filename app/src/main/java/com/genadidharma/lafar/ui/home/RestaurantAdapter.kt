@@ -23,8 +23,6 @@ class RestaurantAdapter(
         const val TYPE_MEDIUM = 2
     }
 
-    val attachmentAdapter = FriendsAttachmentAdapter()
-
     interface RestaurantAdapterListener {
         fun onRestaurantClicked(cardView: View, restaurant: Restaurant)
         fun onRestaurantFavoriteClicked(restaurant: Restaurant): Boolean
@@ -45,6 +43,10 @@ class RestaurantAdapter(
             private val binding: ItemLgRestaurantCardBinding,
             listener: RestaurantAdapterListener
     ) : RecyclerView.ViewHolder(binding.root) {
+        private val attachmentAdapter = object : FriendsAttachmentAdapter(){
+            override fun getLayoutIdForPosition(position: Int): Int = R.layout.friends_attachment_preview_item_layout
+        }
+
         fun bind(restaurant: Restaurant) {
             binding.restaurant = restaurant
             binding.cgType.removeAllViews()
